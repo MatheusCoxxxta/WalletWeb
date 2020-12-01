@@ -5,17 +5,17 @@ import NotFound from "@/pages/NotFoundPage.vue";
 // Admin pages
 const Dashboard = () => import(/* webpackChunkName: "dashboard" */"@/pages/Dashboard.vue");
 const Profile = () => import(/* webpackChunkName: "common" */ "@/pages/Profile.vue");
-const Notifications = () => import(/* webpackChunkName: "common" */"@/pages/Notifications.vue");
 const Icons = () => import(/* webpackChunkName: "common" */ "@/pages/Icons.vue");
-const Maps = () => import(/* webpackChunkName: "common" */ "@/pages/Maps.vue");
 const Typography = () => import(/* webpackChunkName: "common" */ "@/pages/Typography.vue");
 const TableList = () => import(/* webpackChunkName: "common" */ "@/pages/TableList.vue");
+
+const SignIn = () => import(/* webpackChunkName: "common" */ "@/pages/SignIn/");
 
 const routes = [
   {
     path: "/",
     component: DashboardLayout,
-    redirect: "/dashboard",
+    redirect: "/signin",
     children: [
       {
         path: "dashboard",
@@ -28,19 +28,9 @@ const routes = [
         component: Profile
       },
       {
-        path: "notifications",
-        name: "notifications",
-        component: Notifications
-      },
-      {
         path: "icons",
         name: "icons",
         component: Icons
-      },
-      {
-        path: "maps",
-        name: "maps",
-        component: Maps
       },
       {
         path: "typography",
@@ -53,6 +43,11 @@ const routes = [
         component: TableList
       }
     ]
+  },
+  {
+    path: "/signin",
+    name: "SignIn",
+    component: SignIn
   },
   { path: "*", component: NotFound },
 ];

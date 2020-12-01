@@ -21,6 +21,9 @@ import router from "./router/index";
 import BlackDashboard from "./plugins/blackDashboard";
 import i18n from "./i18n"
 import './registerServiceWorker'
+
+import Vuex from 'vuex'
+import store from './store'
 Vue.use(BlackDashboard);
 Vue.use(VueRouter);
 Vue.use(RouterPrefetch);
@@ -29,5 +32,6 @@ Vue.use(RouterPrefetch);
 new Vue({
   router,
   i18n,
+  store: store,
   render: h => h(App)
 }).$mount("#app");
