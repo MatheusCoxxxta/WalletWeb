@@ -44,6 +44,9 @@ import TopNavbar from "./TopNavbar.vue";
 import ContentFooter from "./ContentFooter.vue";
 import DashboardContent from "./Content.vue";
 import MobileMenu from "./MobileMenu";
+
+import { mapMutations } from "vuex";
+
 export default {
   components: {
     TopNavbar,
@@ -57,6 +60,8 @@ export default {
         this.$sidebar.displaySidebar(false);
       }
     }
-  }
+  },
+
+  computed: mapMutations(["getUser"])
 };
 </script>
